@@ -9,7 +9,7 @@
 <p align="center">
  <a href="#about">Sobre</a> • 
  <a href="#started">Iniciando</a> • 
-  <a href="#started">Rotas</a> •  
+  <a href="#routes">Rotas</a> •  
 </p>
 
 
@@ -17,7 +17,7 @@
     <img src="./.github/tela-login.png" alt="Image Example" width="400px">
 </p>
 
-<h2 id="started">📌 Sobre</h2>
+<h2 id="about">📌 Sobre</h2>
 
 Este projeto foi criado para ser usado como frontend da aplicação https://github.com/luzivangois/java-vuln-app.
 
