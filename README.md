@@ -1,76 +1,60 @@
 [TYPESCRIPT__BADGE]: https://img.shields.io/badge/typescript-D4FAFF?style=for-the-badge&logo=typescript
 [ANGULAR__BADGE]: https://img.shields.io/badge/Angular-red?style=for-the-badge&logo=angular
 
-<h1 align="center" style="font-weight: bold;">Login Page example in Angular 💻</h1>
+<h1 align="center" style="font-weight: bold;"> Página de Login em Angular 💻</h1>
 
 ![angular][ANGULAR__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
 
 <p align="center">
- <a href="#about">About</a> • 
- <a href="#started">Getting Started</a> • 
-  <a href="#started">App Routes</a> • 
-  <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a>
+ <a href="#about">Sobre</a> • 
+ <a href="#started">Iniciando</a> • 
+  <a href="#started">Rotas</a> •  
 </p>
 
 
 <p align="center">
-    <img src="./.github/login.png" alt="Image Example" width="400px">
+    <img src="./.github/tela-login.png" alt="Image Example" width="400px">
 </p>
 
-<h2 id="started">📌 About</h2>
+<h2 id="started">📌 Sobre</h2>
 
-This project is a simple Login and Sign Up app developed during [my youtube video](https://youtu.be/6qbuuPM_de4) to demonstrate how to create  Angular apps with authentication and integrate with backend.
+Este projeto foi criado para ser usado como frontend da aplicação https://github.com/luzivangois/java-vuln-app.
 
-<h2 id="started">🚀 Getting started</h2>
+<h2 id="started">🚀 Iniciando</h2>
 
-Here you describe how to run your project locally
+O projeto roda apenas localmente, conforme especificações abaixo:
 
-<h3>Prerequisites</h3>
+<h3>Requisitos</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
+Segue lista de requisitos necessários para rodar o projeto:
 
-- [NodeJS](https://github.com/)
-- [Git 2](https://github.com)
+- [NodeJS](https://nodejs.org/en)
+- [Backend Java](https://github.com/luzivangois/java-vuln-app)
 - [Angular CLI](https://angular.io/cli)
 
-<h3>Cloning</h3>
+<h3>Clonando</h3>
 
-How to clone your project
-
+Como clonar o projeto
 ```bash
-git clone https://github.com/Fernanda-Kipper/login-page.git
+git clone https://github.com/luzivangois/advocacia-associados.git
 ```
 
-<h3>Starting</h3>
+<h3>Subindo a aplicação</h3>
 
-How to start your project
+Como subir localmente a sua aplicação
 
 ```bash
 cd project-name
-npm run start
+npm start
 ```
 
-<h2 id="routes">📍 Application Routes</h2>
+<h2 id="routes">📍 Rotas da Aplicação</h2>
 
-Here you can list the main routes of your API, and what are their expected request bodies.
+Lista das principais rotas da API
 ​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
-| <kbd>/signup</kbd>     | Page to sign up
-| <kbd>/login</kbd>     | Page to login
-| <kbd>/user</kbd>     | Protected page that only logged in users can access
-
-<h2 id="contribute">📫 Contribute</h2>
-
-1. `git clone https://github.com/Fernanda-Kipper/text-editor.git`
-2. `git checkout -b feature/NAME`
-3. Follow commit patterns
-4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
-
-<h3>Documentations that might help</h3>
-
-[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
-
-[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+| <kbd>/register</kbd>     | Página para cadastro de usuário
+| <kbd>/login</kbd>     | Página de login do usuário
+| <kbd>/homepage</kbd>     | Página inicial após o usuário ser autenticado
