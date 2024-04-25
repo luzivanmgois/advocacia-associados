@@ -1,0 +1,28 @@
+<main>
+  <section class="form-section">
+    <h1>Advocacia</h1>
+    <h1>&</h1>
+    <h1>Associados</h1>
+    <br>
+
+    <h2>Upload de Arquivos</h2>
+    <ng-content></ng-content>
+
+    <div class="upload-container">
+      <input type="file" (change)="onFileSelected($event)" />
+      <input type="text" [(ngModel)]="fileName" placeholder="Nome do arquivo" />
+      <button class="bt-enviar" (click)="onUpload()">Enviar</button>
+      <div class="divider">
+        <div></div>
+        <span>ou</span>
+        <div></div>
+      </div>
+      <button class="bt-voltar" (click)="backHomepage()">Voltar</button>
+    </div>
+  </section>
+  <section class="main-section">
+    <img src="/assets/svg/escritorio-color.jpeg"/>
+  </section>
+</main>
+  
+  

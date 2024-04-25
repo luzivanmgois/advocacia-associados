@@ -1,0 +1,45 @@
+<app-default-login-layout
+    title="Faça seu cadastro"
+    primaryBtnText="Cadastrar"
+    secondaryBtnText="Acessar"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!signupForm.valid"
+>
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="nome"
+            inputName="nome"
+            type="nome"
+            label="Seu nome"
+            placeholder="Seu Nome"
+        >
+            <img src="/assets/svg/user-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="login"
+            inputName="login"
+            type="text"
+            label="Login"
+            placeholder="Seu Login"
+        >
+            <img src="/assets/svg/user-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="senha"
+            inputName="senha"
+            type="password"
+            label="Sua Senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <app-primary-input
+        formControlName="isAdmin"
+        inputName="isAdmin"
+        type="isAdmin"
+        label="Admin:"
+    >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    </form>
+</app-default-login-layout>

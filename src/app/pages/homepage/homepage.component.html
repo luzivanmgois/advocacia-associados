@@ -1,0 +1,42 @@
+<main>
+  <section class="form-section">
+      <h1>Advocacia</h1>
+      <h1>&</h1>
+      <h1>Associados</h1>
+      <br>
+      
+     <h2>Seja Bem-Vindo!</h2>
+     <ng-content></ng-content>
+     <div class="btn-wrapper">
+          <button 
+              class="data-user" 
+              (click)="navigateToUserId()"
+          >
+              Consultar Usuário
+          </button>
+          <div class="divider">
+            <div></div>
+            <span>ou</span>
+            <div></div>
+          </div>
+          <button
+            class="file-upload"
+            (click)="navigateToFileUpload()">
+            Upload de Arquivos
+          </button>
+          <div class="divider">            
+            <div></div>
+            <span>ou</span>
+            <div></div>
+          </div>
+          <button
+              class="logout"
+              (click)="logout()">
+              SAIR
+            </button>
+     </div>
+  </section>
+  <section class="main-section">
+      <img src="/assets/svg/escritorio-color.jpeg"/>
+  </section>
+</main>

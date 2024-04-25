@@ -1,0 +1,19 @@
+<app-default-login-layout
+    title="Consultar Usuário"
+    primaryBtnText="Consultar"
+    secondaryBtnText="Voltar"
+    (submit)="submit()"
+    (navigate)="voltar()"
+    [disablePrimaryBtn]="!idForm.valid"
+>
+    <form [formGroup]="idForm">
+        <app-primary-input
+            formControlName="id"
+            inputName="id"
+            type="text"
+            label="IdUsuário"
+            placeholder="Idusuario"
+        >
+        </app-primary-input>        
+    </form>
+</app-default-login-layout>

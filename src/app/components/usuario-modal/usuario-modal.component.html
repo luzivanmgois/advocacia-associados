@@ -1,0 +1,26 @@
+<main>
+    <h2 mat-dialog-title>Dados do Usuário</h2>
+    <mat-dialog-content class="dados">
+        <p>
+            <span class="label">ID:</span>
+            <span class="value">{{ data.usuario.id }}</span>
+        </p>
+        <p>
+            <span class="label">Admin:</span>
+            <span class="value">{{ data.usuario.isAdmin }}</span>
+        </p>
+        <p>
+            <span class="label">Login:</span>
+            <span class="value">{{ data.usuario.nome }}</span>
+        </p>
+        <p>
+            <span class="label">Senha:</span>
+            <span class="value">{{ data.usuario.senha }}</span>
+        </p>
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+        <button class="button" mat-button (click)="onNoClick()">Fechar</button>
+    </mat-dialog-actions>
+</main>
+
