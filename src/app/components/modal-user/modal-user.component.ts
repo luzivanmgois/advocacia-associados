@@ -2,17 +2,17 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
- selector: 'app-usuario-modal',
+ selector: 'app-molda-user',
  standalone: true,
  imports: [MatDialogModule],
- templateUrl: './usuario-modal.component.html',
- styleUrls: ['./usuario-modal.component.scss']
+ templateUrl: './modal-user.component.html',
+ styleUrls: ['./modal-user.component.scss']
 })
-export class UsuarioModalComponent {
+export class MoldalUserComponent {
   usuario: any;
 
  constructor(
-    public dialogRef: MatDialogRef<UsuarioModalComponent>,
+    public dialogRef: MatDialogRef<MoldalUserComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
  onNoClick(): void {

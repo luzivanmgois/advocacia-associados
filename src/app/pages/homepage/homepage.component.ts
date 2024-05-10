@@ -18,7 +18,7 @@ export class HomepageComponent {
   constructor(private router: Router) {}
 
   navigateToUserId() {
-    this.router.navigate(['usuario-consulta']);
+    this.router.navigate(['user-find-id']);
   }
 
   navigateToFileUpload() {

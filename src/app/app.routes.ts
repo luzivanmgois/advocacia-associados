@@ -3,7 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { FileUploadComponent } from './pages/fileupload/fileupload.component';
-import { UsuarioConsultaComponent } from './pages/usuario-consulta/usuario-consulta.component';
+import { UserFindIdComponent } from './pages/user-find-id/user-find-id.component';
 import { AuthGuard } from './services/auth-guard.service';
 
 export const routes: Routes = [
@@ -26,8 +26,8 @@ export const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: "usuario-consulta",
-        component: UsuarioConsultaComponent,
+        path: "user-find-id",
+        component: UserFindIdComponent,
         canActivate: [AuthGuard]
     }
 ];

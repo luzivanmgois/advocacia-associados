@@ -6,14 +6,14 @@ import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { UsuarioModalComponent } from '../../components/usuario-modal/usuario-modal.component';
+import { MoldalUserComponent } from '../../components/modal-user/modal-user.component';
 
 interface IdForm {
   id: FormControl
 }
 
 @Component({
- selector: 'app-usuario-consulta',
+ selector: 'app-user-find-id',
  standalone: true,
   imports: [
     DefaultLoginLayoutComponent,
@@ -23,10 +23,10 @@ interface IdForm {
   providers: [
     UsuarioService
   ],
- templateUrl: './usuario-consulta.component.html',
- styleUrls: ['./usuario-consulta.component.scss']
+ templateUrl: './user-find-id.component.html',
+ styleUrls: ['./user-find-id.component.scss']
 })
-export class UsuarioConsultaComponent implements OnInit {
+export class UserFindIdComponent implements OnInit {
 
   idForm: FormGroup<IdForm>;
   usuario: any;
@@ -49,10 +49,10 @@ constructor(
   this.usuarioService.getUsuarioById(this.idForm.value.id).subscribe({
     next: (data) => {
       this.toastService.success("Usuário Encontrado.");
-      this.dialog.open(UsuarioModalComponent, {
-        width: '500px',
-        height: '350px',
-        data: {usuario: data} // Passa os dados do usuário para o modal
+      this.dialog.open(MoldalUserComponent, {
+        width: '520px',
+        height: '370px',
+        data: {usuario: data}
       });
   },
     error: () => this.toastService.error("Usuário não encontrado! Verifique o ID informado e tente novamente.")

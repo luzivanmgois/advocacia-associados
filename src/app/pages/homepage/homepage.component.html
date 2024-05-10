@@ -9,10 +9,21 @@
      <ng-content></ng-content>
      <div class="btn-wrapper">
           <button 
+            class="data-user" 
+            (click)="navigateToUserId()"
+          >
+            Consultar Todos os Usuários
+          </button>
+          <div class="divider">
+            <div></div>
+            <span>ou</span>
+            <div></div>
+          </div>
+          <button 
               class="data-user" 
               (click)="navigateToUserId()"
           >
-              Consultar Usuário
+              Consultar Usuário por ID
           </button>
           <div class="divider">
             <div></div>
