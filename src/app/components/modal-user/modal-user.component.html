@@ -2,23 +2,23 @@
     <h2 mat-dialog-title>Dados do Usuário</h2>
     <mat-dialog-content class="dados">
         <p>
-            <span class="label">ID:</span>
+            <span class="label">ID: </span>
             <span class="value.id">{{ data.usuario.id }}</span>
         </p>
         <p>
-            <span class="label">Perfil:</span>
+            <span class="label">Perfil: </span>
             <span class="value">{{ data.usuario.role }}</span>
         </p>
         <p>
-            <span class="label">Nome:</span>
+            <span class="label">Nome: </span>
             <span class="value">{{ data.usuario.name }}</span>
         </p>
         <p>
-            <span class="label">Login:</span>
+            <span class="label">Login: </span>
             <span class="value">{{ data.usuario.login }}</span>
         </p>
         <p>
-            <span class="label">Senha:</span>
+            <span class="label">Senha: </span>
             <span class="value">{{ data.usuario.password }}</span>
         </p>
     </mat-dialog-content>
@@ -27,4 +27,3 @@
         <button class="button" mat-button (click)="onNoClick()">Fechar</button>
     </mat-dialog-actions>
 </main>
-

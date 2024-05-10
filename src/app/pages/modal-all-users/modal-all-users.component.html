@@ -1,0 +1,27 @@
+<main>
+    <h2 mat-dialog-title>Usuários Cadastrados</h2>
+    <div *ngFor="let user of data.users">
+        <mat-dialog-content class="dados">
+            <p>
+                <span class="label">ID: </span>
+                <span class="value.id">{{ user.id }}</span>
+            </p>
+            <p>
+                <span class="label">Perfil: </span>
+                <span class="value">{{ user.role }}</span>
+            </p>
+            <p>
+                <span class="label">Nome: </span>
+                <span class="value">{{ user.name }}</span>
+            </p>
+            <p>
+                <span class="label">Login: </span>
+                <span class="value">{{ user.login }}</span>
+            </p>            
+        </mat-dialog-content>
+    </div>
+    
+    <mat-dialog-actions>
+        <button class="button" mat-button (click)="onNoClick()">Fechar</button>
+    </mat-dialog-actions>
+</main>

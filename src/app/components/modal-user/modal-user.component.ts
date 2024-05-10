@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
- selector: 'app-molda-user',
+ selector: 'app-moldal-user',
  standalone: true,
  imports: [MatDialogModule],
  templateUrl: './modal-user.component.html',
