@@ -8,8 +8,8 @@
 >
     <form [formGroup]="signupForm">
         <app-primary-input
-            formControlName="nome"
-            inputName="nome"
+            formControlName="name"
+            inputName="name"
             type="nome"
             label="Seu nome"
             placeholder="Seu Nome"
@@ -26,18 +26,18 @@
             <img src="/assets/svg/user-icon.svg"/>
         </app-primary-input>
         <app-primary-input
-            formControlName="senha"
-            inputName="senha"
+            formControlName="password"
+            inputName="password"
             type="password"
             label="Sua Senha"
         >
         <img src="/assets/svg/password-icon.svg"/>
     </app-primary-input>
     <app-primary-input
-        formControlName="isAdmin"
-        inputName="isAdmin"
-        type="isAdmin"
-        label="Admin:"
+        formControlName="role"
+        inputName="role"
+        type="text"
+        label="Perfil:"
     >
         <img src="/assets/svg/password-icon.svg"/>
     </app-primary-input>

@@ -31,19 +31,20 @@ export class FileUploadComponent {
 
 onUpload() {
   const formData = new FormData();
-  formData.append('arquivo', this.selectedFile);
-  formData.append('nome', this.fileName);
+  formData.append('file', this.selectedFile);
+  formData.append('name', this.fileName);
 
   const token = sessionStorage.getItem('auth-token');
 
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-  this.http.post('http://localhost:8080/arquivo/enviodocumento', formData, { headers, observe: 'response' })
-  .subscribe({   
+  this.http.post('http://localhost:8080/archive/sendfile', formData, { headers, observe: 'response' })
+  .subscribe({
+    next: () => {
+    this.toastService.success("Arquivo salvo com Sucesso!");
+  },
     error: (error: HttpErrorResponse) => {
-      if (error.status === 201) {
-        this.toastService.success("Arquivo salvo com Sucesso!");
-      } else if (error.status === 400) {
+      if (error.status === 400) {
         this.toastService.error("Extensão Inválida!");
       } else if (error.status === 401) {
         this.toastService.error("Erro! Usuário não autenticado.");

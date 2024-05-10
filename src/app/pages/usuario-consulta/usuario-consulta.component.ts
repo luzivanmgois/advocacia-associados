@@ -50,7 +50,7 @@ constructor(
     next: (data) => {
       this.toastService.success("Usuário Encontrado.");
       this.dialog.open(UsuarioModalComponent, {
-        width: '300px',
+        width: '500px',
         height: '350px',
         data: {usuario: data} // Passa os dados do usuário para o modal
       });
