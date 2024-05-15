@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MoldalAllUsersComponent } from './modal-all-users.component';
+import { UserDeleteIdComponent } from './user-delete-id.component';
 
-describe('MoldalAllUsersComponent', () => {
-  let component: MoldalAllUsersComponent;
-  let fixture: ComponentFixture<MoldalAllUsersComponent>;
+describe('UserDeleteIdComponent', () => {
+  let component: UserDeleteIdComponent;
+  let fixture: ComponentFixture<UserDeleteIdComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MoldalAllUsersComponent]
+      imports: [UserDeleteIdComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MoldalAllUsersComponent);
+    fixture = TestBed.createComponent(UserDeleteIdComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

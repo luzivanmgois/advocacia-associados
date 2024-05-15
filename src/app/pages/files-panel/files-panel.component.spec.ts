@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilesPanelComponent } from './files-panel.component';
 
-describe('HomepageComponent', () => {
+describe('FilesPanelComponent', () => {
   let component: FilesPanelComponent;
   let fixture: ComponentFixture<FilesPanelComponent>;
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
- private apiUrl = 'http://localhost:8080/auth/userid';
+ private apiUrl = 'http://localhost:8080/auth';
 
  constructor(private http: HttpClient) { }
 
@@ -17,6 +17,11 @@ getToken(): string {
 
 getUsuarioById(idUsuario: string): Observable<any> {
    const headers = new HttpHeaders().set('Authorization', this.getToken());
-   return this.http.get(`${this.apiUrl}/${idUsuario}`, { headers });
+   return this.http.get(`${this.apiUrl}/userid/${idUsuario}`, { headers });
+}
+
+deleteUsuarioById(idUsuario: string): Observable<any> {
+   const headers = new HttpHeaders().set('Authorization', this.getToken());
+   return this.http.delete(`${this.apiUrl}/deluser/${idUsuario}`, { headers });
 }
 }

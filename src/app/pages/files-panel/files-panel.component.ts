@@ -3,12 +3,11 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
 import { AllUsersService } from '../../services/all-users.service';
-import { MoldalAllUsersComponent } from '../modal-all-users/modal-all-users.component';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-homepage',
+  selector: 'app-files-panel',
   standalone: true,
   imports: [
       DefaultLoginLayoutComponent,

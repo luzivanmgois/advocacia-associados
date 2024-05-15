@@ -51,7 +51,7 @@ export class UsersPanelComponent {
   }
 
   navigateToUserDelete() {
-    this.router.navigate(['user-find-id']);
+    this.router.navigate(['user-delete-id']);
   }
   
   backHomePage() {    
