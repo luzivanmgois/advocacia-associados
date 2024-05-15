@@ -56,7 +56,7 @@ onUpload() {
     }
   });
 }
-backHomepage() {
-  this.router.navigate(["homepage"])
+backFilePanel() {
+  this.router.navigate(["files-panel"])
 }
 }

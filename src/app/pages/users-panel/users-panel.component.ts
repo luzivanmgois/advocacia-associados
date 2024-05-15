@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-homepage',
+  selector: 'app-users-panel',
   standalone: true,
   imports: [
       DefaultLoginLayoutComponent,
@@ -17,26 +17,44 @@ import { MatDialog } from '@angular/material/dialog';
   providers: [
     AllUsersService
   ],
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  templateUrl: './users-panel.component.html',
+  styleUrls: ['./users-panel.component.scss'],
 })
-export class HomepageComponent {
+export class UsersPanelComponent {
   constructor(
     private router: Router,
     private allUserService: AllUsersService,
     private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
-   
-  navigateToUsersPanel() {
-    this.router.navigate(['users-panel']);
+
+  submitAllUsers() {
+    this.allUserService.getAllUsers().subscribe({
+      next: (data) => {
+        this.toastService.success("Buscando Todos Usuários");
+        this.dialog.open(MoldalAllUsersComponent, {
+          width: '520px',
+          height: '700px',
+          data: {users: data}
+        });
+    },
+      error: () => this.toastService.error("Usuários não encontrados!")
+    })
+  }
+  
+  navigateToUserId() {
+    this.router.navigate(['user-find-id']);
   }
 
-  navigateToFilesPanel() {
-    this.router.navigate(['files-panel']);
+  navigateToUserUpdate() {
+    this.router.navigate(['user-find-id']);
   }
 
-  logout() {    
-    this.router.navigate(['login']);
+  navigateToUserDelete() {
+    this.router.navigate(['user-find-id']);
+  }
+  
+  backHomePage() {    
+    this.router.navigate(['homepage']);
   }
 }

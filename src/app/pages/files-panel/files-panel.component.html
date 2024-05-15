@@ -5,14 +5,14 @@
       <h1>Associados</h1>
       <br>
       
-     <h2>Seja Bem-Vindo!</h2>
+     <h2>Painel de Gestão de Arquivos</h2>
      <ng-content></ng-content>
      <div class="btn-wrapper">
           <button 
-            class="data-user" 
-            (click)="navigateToUsersPanel()"
+            class="files" 
+            (click)="navigateToFileUpload()"
           >
-            Painel de Gestão de Usuários
+            Upload de Arquivos
           </button>
           <div class="divider">
             <div></div>
@@ -20,10 +20,10 @@
             <div></div>
           </div>
           <button 
-              class="data-user" 
-              (click)="navigateToFilesPanel()"
+              class="files" 
+              (click)="navigateToFileRead()"
           >
-              Painel de Gestão de Arquivos
+              Ler Conteúdo do Arquivo
           </button>          
           <div class="divider">            
             <div></div>
@@ -32,8 +32,8 @@
           </div>
           <button
               class="logout"
-              (click)="logout()">
-              SAIR
+              (click)="backHomePage()">
+              Voltar
             </button>
      </div>
   </section>

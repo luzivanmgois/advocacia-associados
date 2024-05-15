@@ -17,26 +17,26 @@ import { MatDialog } from '@angular/material/dialog';
   providers: [
     AllUsersService
   ],
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  templateUrl: './files-panel.component.html',
+  styleUrls: ['./files-panel.component.scss'],
 })
-export class HomepageComponent {
+export class FilesPanelComponent {
   constructor(
     private router: Router,
     private allUserService: AllUsersService,
     private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
-   
-  navigateToUsersPanel() {
-    this.router.navigate(['users-panel']);
+
+  navigateToFileUpload() {
+    this.router.navigate(['fileupload']);
   }
 
-  navigateToFilesPanel() {
+  navigateToFileRead() {
     this.router.navigate(['files-panel']);
   }
 
-  logout() {    
-    this.router.navigate(['login']);
+  backHomePage() {    
+    this.router.navigate(['homepage']);
   }
 }

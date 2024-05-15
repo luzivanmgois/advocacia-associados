@@ -59,7 +59,7 @@ constructor(
   })
 }
 
-voltar(){
-  this.router.navigate(["homepage"])
+backUsersPanel(){
+  this.router.navigate(["users-panel"])
 }
 }
