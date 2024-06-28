@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
  providedIn: 'root'
 })
-export class UserService {
+export class UsersService {
 
  private apiUrl = 'http://localhost:8080/auth';
 
@@ -13,6 +13,11 @@ export class UserService {
 
 getToken(): string {   
    return sessionStorage.getItem('auth-token') as string;
+}
+
+getAllUsers(): Observable<any> {
+   const headers = new HttpHeaders().set('Authorization', this.getToken());
+   return this.http.get(`${this.apiUrl}/allusers`, { headers });
 }
 
 getUsuarioById(idUsuario: string): Observable<any> {
@@ -24,4 +29,5 @@ deleteUsuarioById(idUsuario: string): Observable<any> {
    const headers = new HttpHeaders().set('Authorization', this.getToken());
    return this.http.delete(`${this.apiUrl}/deluser/${idUsuario}`, { headers });
 }
+
 }

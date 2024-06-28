@@ -3,7 +3,7 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from '../../services/user.service';
+import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MoldalUserComponent } from '../../components/modal-user/modal-user.component';
@@ -21,7 +21,7 @@ interface IdForm {
     PrimaryInputComponent
   ],
   providers: [
-    UserService
+    UsersService
   ],
  templateUrl: './user-find-id.component.html',
  styleUrls: ['./user-find-id.component.scss']
@@ -33,7 +33,7 @@ export class UserFindIdComponent implements OnInit {
 
 constructor(
   private router: Router,
-  private UserService: UserService,
+  private usersService: UsersService,
   private toastService: ToastrService,
   public dialog: MatDialog
 ){
@@ -46,7 +46,7 @@ constructor(
  }
 
  submit(){
-  this.UserService.getUsuarioById(this.idForm.value.id).subscribe({
+  this.usersService.getUsuarioById(this.idForm.value.id).subscribe({
     next: (data) => {
       this.toastService.success("Usuário Encontrado.");
       this.dialog.open(MoldalUserComponent, {

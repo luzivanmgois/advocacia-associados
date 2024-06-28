@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { AllUsersService } from '../../services/all-users.service';
+import { UsersService } from '../../services/users.service';
 import { MoldalAllUsersComponent } from '../modal-all-users/modal-all-users.component';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
       PrimaryInputComponent,
   ],
   providers: [
-    AllUsersService
+    UsersService
   ],
   templateUrl: './users-panel.component.html',
   styleUrls: ['./users-panel.component.scss'],
@@ -23,13 +23,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class UsersPanelComponent {
   constructor(
     private router: Router,
-    private allUserService: AllUsersService,
+    private usersService: UsersService,
     private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
 
   submitAllUsers() {
-    this.allUserService.getAllUsers().subscribe({
+    this.usersService.getAllUsers().subscribe({
       next: (data) => {
         this.toastService.success("Buscando Todos Usuários");
         this.dialog.open(MoldalAllUsersComponent, {

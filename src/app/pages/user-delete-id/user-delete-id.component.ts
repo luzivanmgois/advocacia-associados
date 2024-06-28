@@ -3,10 +3,9 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from '../../services/user.service';
+import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { MoldalUserComponent } from '../../components/modal-user/modal-user.component';
 
 interface IdForm {
   id: FormControl
@@ -21,7 +20,7 @@ interface IdForm {
     PrimaryInputComponent
   ],
   providers: [
-    UserService
+    UsersService
   ],
  templateUrl: './user-delete-id.component.html',
  styleUrls: ['./user-delete-id.component.scss']
@@ -33,7 +32,7 @@ export class UserDeleteIdComponent implements OnInit {
 
 constructor(
   private router: Router,
-  private UserService: UserService,
+  private usersService: UsersService,
   private toastService: ToastrService,
   public dialog: MatDialog
 ){
@@ -46,7 +45,7 @@ constructor(
  }
 
  submit(){
-  this.UserService.deleteUsuarioById(this.idForm.value.id).subscribe({
+  this.usersService.deleteUsuarioById(this.idForm.value.id).subscribe({
     next: () => {
       this.toastService.success("Usuário Deletado com Sucesso.");      
   },

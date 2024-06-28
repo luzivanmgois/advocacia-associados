@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { AllUsersService } from '../../services/all-users.service';
-import { MoldalAllUsersComponent } from '../modal-all-users/modal-all-users.component';
-import { ToastrService } from 'ngx-toastr';
+import { UsersService } from '../../services/users.service';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -15,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
       PrimaryInputComponent,
   ],
   providers: [
-    AllUsersService
+    UsersService
   ],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
@@ -23,8 +21,6 @@ import { MatDialog } from '@angular/material/dialog';
 export class HomepageComponent {
   constructor(
     private router: Router,
-    private allUserService: AllUsersService,
-    private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
    
