@@ -30,4 +30,9 @@ deleteUsuarioById(idUsuario: string): Observable<any> {
    return this.http.delete(`${this.apiUrl}/deluser/${idUsuario}`, { headers });
 }
 
+updatePass(id: string, password: string): Observable<any> {
+   const headers = new HttpHeaders().set('Authorization', this.getToken());
+   const body = password
+   return this.http.put(`${this.apiUrl}/updatepass/${id}`, body, { headers });
+   }
 }

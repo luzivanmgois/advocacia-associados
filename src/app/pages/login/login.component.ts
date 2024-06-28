@@ -42,10 +42,18 @@ export class LoginComponent {
   submit(){
     this.loginService.login(this.loginForm.value.login, this.loginForm.value.password).subscribe({
       next: () => {
-        this.toastService.success("Login feito com sucesso!");
+        this.toastService.success("Login realizado com sucesso!");
         this.router.navigate(["homepage"]);
     },
-      error: () => this.toastService.error("O Login Falhou! Verifique os dados informados e tente novamente.")
+      error: (err) => {
+        if (err.status === 404) {
+          this.toastService.error("Usuário não localizado.")
+        } else if (err.status === 401) {
+          this.toastService.error("A Senha informada está incorreta!")
+        } else {
+          this.toastService.error("Erro Desconhecido. Tente novamente!")
+        }
+      }
     })
   }
 

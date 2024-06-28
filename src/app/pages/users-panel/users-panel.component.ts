@@ -31,14 +31,14 @@ export class UsersPanelComponent {
   submitAllUsers() {
     this.usersService.getAllUsers().subscribe({
       next: (data) => {
-        this.toastService.success("Buscando Todos Usuários");
+        this.toastService.success("Usuários Localizados.");
         this.dialog.open(MoldalAllUsersComponent, {
           width: '520px',
           height: '700px',
           data: {users: data}
         });
     },
-      error: () => this.toastService.error("Usuários não encontrados!")
+      error: () => this.toastService.error("Não foram encontrados usuários cadastrados!")
     })
   }
   
@@ -47,7 +47,7 @@ export class UsersPanelComponent {
   }
 
   navigateToUserUpdate() {
-    this.router.navigate(['user-find-id']);
+    this.router.navigate(['user-update']);
   }
 
   navigateToUserDelete() {

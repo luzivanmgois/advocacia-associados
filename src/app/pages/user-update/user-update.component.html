@@ -1,0 +1,26 @@
+<app-default-login-layout
+    title="Atualizar Senha do Usuário"
+    primaryBtnText="Atualizar"
+    secondaryBtnText="Voltar"
+    (submit)="submit()"
+    (navigate)="backUsersPanel()"
+    [disablePrimaryBtn]="!idForm.valid"
+>
+    <form [formGroup]="idForm">
+        <app-primary-input
+            formControlName="id"
+            inputName="id"
+            type="text"
+            label="IdUsuário"
+            placeholder="Idusuario"
+        >
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Nova Senha"
+        >
+        </app-primary-input>        
+    </form>
+</app-default-login-layout>

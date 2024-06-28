@@ -46,7 +46,13 @@ export class SignUpComponent {
   submit(){
     this.loginService.signup(this.signupForm.value.name, this.signupForm.value.login, this.signupForm.value.password, this.signupForm.value.role).subscribe({
       next: () => this.toastService.success("Usuário criado com sucesso!"),
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
+      error: (err) => {
+        if (err.status === 400) {
+          this.toastService.error("Login Indisponível! Usuário já existe na base de dados.")
+        } else {
+          this.toastService.error("Erro Desconhecido. Tente novamente.")
+        }
+      }
     })
   }
 

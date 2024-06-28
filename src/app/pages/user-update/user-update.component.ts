@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { ToastrService } from 'ngx-toastr';
 import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { MoldalUserComponent } from '../../components/modal-user/modal-user.component';
 
 interface IdForm {
-  id: FormControl
+  id: FormControl,
+  password: FormControl
 }
 
 @Component({
- selector: 'app-user-delete-id',
+ selector: 'app-user-update',
  standalone: true,
   imports: [
     DefaultLoginLayoutComponent,
@@ -22,10 +24,10 @@ interface IdForm {
   providers: [
     UsersService
   ],
- templateUrl: './user-delete-id.component.html',
- styleUrls: ['./user-delete-id.component.scss']
+ templateUrl: './user-update.component.html',
+ styleUrls: ['./user-update.component.scss']
 })
-export class UserDeleteIdComponent implements OnInit {
+export class UserUpdateComponent {
 
   idForm: FormGroup<IdForm>;
   usuario: any;
@@ -37,17 +39,15 @@ constructor(
   public dialog: MatDialog
 ){
   this.idForm = new FormGroup({
-    id: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    id: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(3)])
   })
 }
 
- ngOnInit(): void {
- }
-
  submit(){
-  this.usersService.deleteUsuarioById(this.idForm.value.id).subscribe({
+  this.usersService.updatePass(this.idForm.value.id, this.idForm.value.password).subscribe({
     next: () => {
-      this.toastService.success("Usuário Deletado com Sucesso.");      
+      this.toastService.success("Senha Atualizada com Sucesso!");
   },
     error: (err) => {
       if (err.status === 403) {
@@ -59,7 +59,7 @@ constructor(
       }
     }
   })
-}
+} 
 
 backUsersPanel(){
   this.router.navigate(["users-panel"])

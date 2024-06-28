@@ -8,6 +8,7 @@ import { UsersPanelComponent } from './pages/users-panel/users-panel.component';
 import { FilesPanelComponent } from './pages/files-panel/files-panel.component';
 import { UserDeleteIdComponent } from './pages/user-delete-id/user-delete-id.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { UserUpdateComponent } from './pages/user-update/user-update.component';
 
 export const routes: Routes = [
     {
@@ -46,6 +47,11 @@ export const routes: Routes = [
     {
         path: "user-delete-id",
         component: UserDeleteIdComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: "user-update",
+        component: UserUpdateComponent,
         canActivate: [AuthGuard]
     }
 ];
