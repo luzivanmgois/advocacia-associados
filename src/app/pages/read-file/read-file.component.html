@@ -1,0 +1,19 @@
+<app-default-login-layout
+    title="Exibir Conteúdo de Arquivo"
+    primaryBtnText="Exibir"
+    secondaryBtnText="Voltar"
+    (submit)="submit()"
+    (navigate)="backFilesPanel()"
+    [disablePrimaryBtn]="!fileNameForm.valid"
+>
+    <form [formGroup]="fileNameForm">
+        <app-primary-input
+            formControlName="filename"
+            inputName="filename"
+            type="text"
+            label="Nome do Arquivo.txt"
+            placeholder="Nome do Arquivo.txt"
+        >
+        </app-primary-input>        
+    </form>
+</app-default-login-layout>

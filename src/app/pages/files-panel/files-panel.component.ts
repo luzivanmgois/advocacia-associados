@@ -27,7 +27,7 @@ export class FilesPanelComponent {
   }
 
   navigateToFileRead() {
-    this.router.navigate(['files-panel']);
+    this.router.navigate(['read-file']);
   }
 
   backHomePage() {    

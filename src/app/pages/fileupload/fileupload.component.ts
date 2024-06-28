@@ -56,6 +56,7 @@ onUpload() {
     }
   });
 }
+
 backFilePanel() {
   this.router.navigate(["files-panel"])
 }

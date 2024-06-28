@@ -9,6 +9,7 @@ import { FilesPanelComponent } from './pages/files-panel/files-panel.component';
 import { UserDeleteIdComponent } from './pages/user-delete-id/user-delete-id.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { UserUpdateComponent } from './pages/user-update/user-update.component';
+import { ReadFileComponent } from './pages/read-file/read-file.component';
 
 export const routes: Routes = [
     {
@@ -42,6 +43,11 @@ export const routes: Routes = [
     {
         path: "files-panel",
         component: FilesPanelComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: "read-file",
+        component: ReadFileComponent,
         canActivate: [AuthGuard]
     },
     {
