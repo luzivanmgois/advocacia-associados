@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { MoldalContentFileComponent } from '../modal-content-file/modal-content-file.component';
+import { environment } from '../../../environments/environment';
 
 interface FileNameForm {
   filename: FormControl
@@ -32,6 +33,8 @@ export class ReadFileComponent {
   fileNameForm: FormGroup<FileNameForm>;
   content = '';
 
+ private apiUrl = environment.apiUrl + "/archive/name"; 
+
 constructor(
   private router: Router,
   private toastService: ToastrService,
@@ -51,7 +54,7 @@ getToken(): string {
   const headers = new HttpHeaders().set('Authorization', this.getToken());
   const params = new HttpParams().set('name', this.fileNameForm.value.filename)
   
-  this.http.get('http://localhost:8080/archive/name', { params: params, headers, responseType: 'text' })
+  this.http.get(this.apiUrl, { params: params, headers, responseType: 'text' })
   .subscribe({
     next: (content) => {
       this.toastService.success("Arquivo localizado. O conteúdo será exibido.")

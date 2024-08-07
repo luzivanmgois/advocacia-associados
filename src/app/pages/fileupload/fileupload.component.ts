@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../environments/environment';
 
 @Component({
  selector: 'app-fileupload',
@@ -18,6 +19,8 @@ import { ToastrService } from 'ngx-toastr';
 export class FileUploadComponent {
  fileName: string = '';
  selectedFile!: File;
+
+ private apiUrl = environment.apiUrl + "/archive/sendfile"; 
 
  constructor(private http: HttpClient, private router: Router, private toastService: ToastrService) {}
 
@@ -38,7 +41,7 @@ onUpload() {
 
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-  this.http.post('http://localhost:8080/archive/sendfile', formData, { headers, observe: 'response' })
+  this.http.post(this.apiUrl, formData, { headers, observe: 'response' })
   .subscribe({
     next: () => {
     this.toastService.success("Arquivo salvo com Sucesso!");
