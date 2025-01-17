@@ -12,6 +12,11 @@ import { UserUpdateComponent } from './pages/user-update/user-update.component';
 import { ReadFileComponent } from './pages/read-file/read-file.component';
 
 export const routes: Routes = [
+    { 
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
     {
         path: "login",
         component: LoginComponent
