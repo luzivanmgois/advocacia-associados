@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://java-vuln-api.onrender.com',
+    apiUrl: 'https://java-sec-api.onrender.com',
   };  
